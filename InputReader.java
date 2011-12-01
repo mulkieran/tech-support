@@ -29,6 +29,7 @@ public class InputReader implements Iterator<Set<String>>
 
     public boolean hasNext()
     {
+        assert (!done || this.inputLine == null);
         if (done)
         {
             return false;
