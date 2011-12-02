@@ -42,14 +42,16 @@ public class InputReader implements Iterator<Set<String>>
 
                 if (reader.hasNextLine())
                 {
-                    this.inputLine = reader.nextLine().trim().toLowerCase();
-                    if (this.inputLine.contains("bye"))
+                    String line = reader.nextLine().trim().toLowerCase();
+                    
+                    if (line.contains("bye"))
                     {
                         done = true;
                         return false;
                     }
                     else
                     {
+                        this.inputLine = line;
                         return true;
                     }
                 }
