@@ -36,25 +36,32 @@ public class InputReader implements Iterator<Set<String>>
         }
         else
         {
-            System.out.print("> ");
-            
-            if (reader.hasNextLine())
+            if (inputLine == null)
             {
-                this.inputLine = reader.nextLine().trim().toLowerCase();
-                if (this.inputLine.contains("bye"))
+                System.out.print("> ");
+
+                if (reader.hasNextLine())
+                {
+                    this.inputLine = reader.nextLine().trim().toLowerCase();
+                    if (this.inputLine.contains("bye"))
+                    {
+                        done = true;
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+                else
                 {
                     done = true;
                     return false;
                 }
-                else
-                {
-                    return true;
-                }
             }
             else
             {
-                done = true;
-                return false;
+                return true;
             }
         }
     }
