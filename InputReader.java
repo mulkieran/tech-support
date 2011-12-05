@@ -70,6 +70,7 @@ public class InputReader implements Iterator<Set<String>>
 
     public Set<String> next()
     {
+        assert (!done || this.inputLine == null);
         if (this.inputLine.isEmpty())
         {
             return new HashSet<String>();
