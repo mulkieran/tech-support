@@ -1,4 +1,4 @@
-
+import java.io.ByteArrayInputStream;
 
 import static org.junit.Assert.*;
 import org.junit.After;
@@ -39,4 +39,13 @@ public class InputReaderTest
     public void tearDown()
     {
     }
+
+    @Test
+    public void test1()
+    {
+        InputReader inputRea1 = new InputReader(new ByteArrayInputStream(new String("slow").getBytes()));
+        assertEquals(true, inputRea1.hasNext());
+        assertEquals(true, inputRea1.hasNext());
+    }
 }
+
