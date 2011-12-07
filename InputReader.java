@@ -3,6 +3,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.Scanner;
+import java.io.InputStream;
 
 /**
  * InputReader reads typed text input from the standard text terminal. 
@@ -21,9 +22,9 @@ public class InputReader implements Iterator<Set<String>>
     /**
      * Create a new InputReader that reads text from the text terminal.
      */
-    public InputReader()
+    public InputReader(InputStream is)
     {
-        reader = new Scanner(System.in);
+        reader = new Scanner(is);
         done = false;
     }
 
