@@ -50,10 +50,21 @@ public class InputReaderTest
         assertEquals(true, inputRea1.hasNext());
     }
     
-     @Test
+    @Test
     public void test2()
     {
         InputReader inputRea1 = new InputReader(new ByteArrayInputStream(new String("slow").getBytes()));
+        Set<String> inp = inputRea1.next();
+        Set<String> expected = new HashSet<String>();
+        expected.add("slow");
+        assertEquals(inp, expected);
+    }
+    
+    @Test
+    public void test3()
+    {
+        InputReader inputRea1 = new InputReader(new ByteArrayInputStream(new String("slow").getBytes()));
+        inputRea1.hasNext();        
         Set<String> inp = inputRea1.next();
         Set<String> expected = new HashSet<String>();
         expected.add("slow");
