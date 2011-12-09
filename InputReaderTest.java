@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import java.util.Set;
+import java.util.HashSet;
 
 /**
  * The test class InputReaderTest.
@@ -46,6 +48,16 @@ public class InputReaderTest
         InputReader inputRea1 = new InputReader(new ByteArrayInputStream(new String("slow").getBytes()));
         assertEquals(true, inputRea1.hasNext());
         assertEquals(true, inputRea1.hasNext());
+    }
+    
+     @Test
+    public void test2()
+    {
+        InputReader inputRea1 = new InputReader(new ByteArrayInputStream(new String("slow").getBytes()));
+        Set<String> inp = inputRea1.next();
+        Set<String> expected = new HashSet<String>();
+        expected.add("slow");
+        assertEquals(inp, expected);
     }
 }
 
