@@ -10,8 +10,8 @@ import java.util.HashSet;
 /**
  * The test class InputReaderTest.
  *
- * @author  (your name)
- * @version (a version number or a date)
+ * @author  Jesse Brake, Whitney Gain, and Melissa Rudzke
+ * @version 13 December 2011
  */
 public class InputReaderTest
 {
@@ -41,23 +41,12 @@ public class InputReaderTest
     public void tearDown()
     {
     }
-
-    /**
-     * q1 to q4 to q0 for hasNext()
-     */
-    @Test
-    public void test1()
-    {
-        InputReader inputRea1 = new InputReader(new ByteArrayInputStream(new String("slow").getBytes()));
-        assertEquals(true, inputRea1.hasNext());
-        assertEquals(true, inputRea1.hasNext());
-    }
     
     /**
-     * q1 to q4 to q5 in next()
+     * q1 to q4 to q5 in next().
      */
     @Test
-    public void test2()
+    public void next_1_4_5()
     {
         InputReader inputRea1 = new InputReader(new ByteArrayInputStream(new String("slow").getBytes()));
         Set<String> inp = inputRea1.next();
@@ -67,10 +56,21 @@ public class InputReaderTest
     }
     
     /**
-     * q0 to q5 in next()
+     * q1 to q4 to q0 for hasNext().
      */
     @Test
-    public void test3()
+    public void hasNext_1_4_0()
+    {
+        InputReader inputRea1 = new InputReader(new ByteArrayInputStream(new String("slow").getBytes()));
+        assertEquals(true, inputRea1.hasNext());
+        assertEquals(true, inputRea1.hasNext());
+    }
+    
+    /**
+     * q0 to q5 in next().
+     */
+    @Test
+    public void next_0_5()
     {
         InputReader inputRea1 = new InputReader(new ByteArrayInputStream(new String("slow").getBytes()));
         inputRea1.hasNext();        
@@ -81,11 +81,11 @@ public class InputReaderTest
     }
     
     /**
-     * q1 to q4 to q3 in hasnext()
+     * q1 to q4 to q3 in hasNext().
      * 
      */
     @Test
-    public void test4()
+    public void hasNext_1_4_3()
     {
         InputReader inputRea1 = new InputReader(new ByteArrayInputStream(new String("bye").getBytes()));
         assertEquals(false, inputRea1.hasNext());
@@ -93,32 +93,32 @@ public class InputReaderTest
     }
     
     /**
-     * q1 to q3 in hasnext()
+     * q1 to q3 in hasNext().
      * 
      */
     @Test
-    public void test5()
+    public void hasNext_1_3()
     {
        InputReader inputRea1 = new InputReader(new ByteArrayInputStream(new String("").getBytes()));
        assertEquals(false, inputRea1.hasNext());
     }
     
     /**
-     * q0 to q0 in hasnext()
+     * q0 to q0 in hasNext().
      * 
      */
     @Test
-    public void test6()
+    public void hasNext_0_0()
     {
        
     }
     
     /**
-     * q3 to q3 in hasnext()
+     * q3 to q3 in hasNext().
      * 
      */
     @Test
-    public void test7()
+    public void hasNext_3_3()
     {
        
     }
