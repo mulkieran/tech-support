@@ -42,6 +42,9 @@ public class InputReaderTest
     {
     }
 
+    /**
+     * q1 to q4 to q0 for hasNext()
+     */
     @Test
     public void test1()
     {
@@ -50,6 +53,9 @@ public class InputReaderTest
         assertEquals(true, inputRea1.hasNext());
     }
     
+    /**
+     * q1 to q4 to q5 in next()
+     */
     @Test
     public void test2()
     {
@@ -60,6 +66,9 @@ public class InputReaderTest
         assertEquals(inp, expected);
     }
     
+    /**
+     * q0 to q5 in next()
+     */
     @Test
     public void test3()
     {
