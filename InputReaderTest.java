@@ -99,7 +99,8 @@ public class InputReaderTest
     @Test
     public void test5()
     {
-       
+       InputReader inputRea1 = new InputReader(new ByteArrayInputStream(new String("").getBytes()));
+       assertEquals(false, inputRea1.hasNext());
     }
     
     /**
@@ -113,7 +114,7 @@ public class InputReaderTest
     }
     
     /**
-     * q3 to q3
+     * q3 to q3 in hasnext()
      * 
      */
     @Test
