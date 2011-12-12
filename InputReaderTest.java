@@ -41,7 +41,7 @@ public class InputReaderTest
     public void tearDown()
     {
     }
-    
+
     /**
      * q1 to q4 to q5 in next().
      */
@@ -54,7 +54,7 @@ public class InputReaderTest
         expected.add("slow");
         assertEquals(inp, expected);
     }
-    
+
     /**
      * q1 to q4 to q0 for hasNext().
      */
@@ -65,7 +65,7 @@ public class InputReaderTest
         assertEquals(true, inputRea1.hasNext());
         assertEquals(true, inputRea1.hasNext());
     }
-    
+
     /**
      * q0 to q5 in next().
      */
@@ -79,7 +79,7 @@ public class InputReaderTest
         expected.add("slow");
         assertEquals(inp, expected);
     }
-    
+
     /**
      * q1 to q4 to q3 in hasNext().
      * 
@@ -91,7 +91,7 @@ public class InputReaderTest
         assertEquals(false, inputRea1.hasNext());
         assertEquals(false, inputRea1.hasNext());
     }
-    
+
     /**
      * q1 to q3 in hasNext().
      * 
@@ -99,10 +99,10 @@ public class InputReaderTest
     @Test
     public void hasNext_1_3()
     {
-       InputReader inputRea1 = new InputReader(new ByteArrayInputStream(new String("").getBytes()));
-       assertEquals(false, inputRea1.hasNext());
+        InputReader inputRea1 = new InputReader(new ByteArrayInputStream(new String("").getBytes()));
+        assertEquals(false, inputRea1.hasNext());
     }
-    
+
     /**
      * q0 to q0 in hasNext().
      * 
@@ -110,9 +110,10 @@ public class InputReaderTest
     @Test
     public void hasNext_0_0()
     {
-       
+        InputReader inputRea1 = new InputReader(new ByteArrayInputStream(new String("slow").getBytes()));
+        assertEquals(true, inputRea1.hasNext());        
     }
-    
+
     /**
      * q3 to q3 in hasNext().
      * 
@@ -120,8 +121,10 @@ public class InputReaderTest
     @Test
     public void hasNext_3_3()
     {
-       
+        InputReader inputRea1 = new InputReader(new ByteArrayInputStream(new String("").getBytes()));
+        assertEquals(false, inputRea1.hasNext());
+        assertEquals(false, inputRea1.hasNext()); 
     }
-    
+
 }
 
