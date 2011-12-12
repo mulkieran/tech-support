@@ -79,5 +79,46 @@ public class InputReaderTest
         expected.add("slow");
         assertEquals(inp, expected);
     }
+    
+    /**
+     * q1 to q4 to q3 in hasnext()
+     * 
+     */
+    @Test
+    public void test4()
+    {
+       
+    }
+    
+    /**
+     * q1 to q3 in hasnext()
+     * 
+     */
+    @Test
+    public void test5()
+    {
+       
+    }
+    
+    /**
+     * q0 to q0 in hasnext()
+     * 
+     */
+    @Test
+    public void test6()
+    {
+       
+    }
+    
+    /**
+     * q3 to q3
+     * 
+     */
+    @Test
+    public void test7()
+    {
+       
+    }
+    
 }
 
