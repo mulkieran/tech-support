@@ -87,7 +87,9 @@ public class InputReaderTest
     @Test
     public void test4()
     {
-       
+        InputReader inputRea1 = new InputReader(new ByteArrayInputStream(new String("bye").getBytes()));
+        assertEquals(false, inputRea1.hasNext());
+        assertEquals(false, inputRea1.hasNext());
     }
     
     /**
