@@ -36,7 +36,7 @@ public class SupportSystem
     public void start()
     {
         printWelcome();
-
+        System.out.println("Please type 'bye' to exit our system.");
         for ( ; this.reader.hasNext(); )
         {
             System.out.println(this.responder.generateResponse(this.reader.next()));
