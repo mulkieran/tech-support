@@ -4,6 +4,7 @@ import java.util.Iterator;
 import java.util.Set;
 import java.util.Scanner;
 import java.io.InputStream;
+import java.util.NoSuchElementException;
 
 /**
  * InputReader reads typed text input from the standard text terminal. 
@@ -44,7 +45,7 @@ public class InputReader implements Iterator<Set<String>>
                 if (reader.hasNextLine())
                 {
                     String line = reader.nextLine().trim().toLowerCase();
-                    
+
                     if (line.contains("bye"))
                     {
                         done = true;
@@ -72,15 +73,23 @@ public class InputReader implements Iterator<Set<String>>
     public Set<String> next()
     {
         assert (!done || this.inputLine == null);
-        if (this.inputLine.isEmpty())
-        {
-            return new HashSet<String>();
-        }
+        if (done)
+        { 
+            throw new NoSuchElementException();
+        }        
         else
         {
-            String[] wordArray = this.inputLine.split(" ");
+            if (inputLine==null)
+            { 
+                return new HashSet<String>();
+            }
+            else
+            {
 
-            return new HashSet<String>(Arrays.asList(wordArray));
+                String[] wordArray = this.inputLine.split(" ");
+
+                return new HashSet<String>(Arrays.asList(wordArray));
+            }
         }
     }
 
