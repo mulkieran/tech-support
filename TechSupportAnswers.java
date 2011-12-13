@@ -12,7 +12,6 @@ public class TechSupportAnswers implements Answers
         welcome.add("");
         welcome.add("Please tell us about your problem.");
         welcome.add("We will assist you with any problem you might have.");
-        welcome.add("Please type 'bye' to exit our system.");
         return welcome;
     }
 
