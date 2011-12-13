@@ -81,7 +81,16 @@ public class InputReader implements Iterator<Set<String>>
         {
             if (inputLine==null)
             { 
-                return new HashSet<String>();
+                if(hasNext())
+                {
+                    String[] wordArray = this.inputLine.split(" ");
+
+                    return new HashSet<String>(Arrays.asList(wordArray));
+                }
+                else
+                {
+                    throw new NoSuchElementException();
+                }
             }
             else
             {
