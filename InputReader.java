@@ -29,6 +29,30 @@ public class InputReader implements Iterator<Set<String>>
         done = false;
     }
 
+    private boolean getInput()
+    {
+        System.out.print("> ");
+
+        if (reader.hasNextLine())
+        {
+            String line = reader.nextLine().trim().toLowerCase();
+
+            if (line.contains("bye"))
+            {
+                return false;
+            }
+            else
+            {
+                this.inputLine = line;
+                return true;
+            }
+        }
+        else
+        {
+            return false;
+        }        
+    }
+
     public boolean hasNext()
     {
         assert (!done || this.inputLine == null);
@@ -40,33 +64,27 @@ public class InputReader implements Iterator<Set<String>>
         {
             if (inputLine == null)
             {
-                System.out.print("> ");
-
-                if (reader.hasNextLine())
-                {
-                    String line = reader.nextLine().trim().toLowerCase();
-
-                    if (line.contains("bye"))
-                    {
-                        done = true;
-                        return false;
-                    }
-                    else
-                    {
-                        this.inputLine = line;
-                        return true;
-                    }
-                }
-                else
-                {
-                    done = true;
-                    return false;
-                }
+                return !(done = !getInput());
             }
             else
             {
                 return true;
             }
+        }
+    }
+
+    private Set<String> nextSet()
+    {
+        if (this.inputLine.isEmpty())
+        {
+            this.inputLine = null;
+            return new HashSet<String>();
+        }
+        else
+        {
+            String[] wordArray = this.inputLine.split(" ");
+            this.inputLine = null;
+            return new HashSet<String>(Arrays.asList(wordArray));
         }
     }
 
@@ -81,38 +99,19 @@ public class InputReader implements Iterator<Set<String>>
         {
             if (inputLine == null)
             { 
-                if(hasNext())
+                if(this.getInput())
                 {
-                    if (this.inputLine.isEmpty())
-                    {
-                        this.inputLine = null;
-                        return new HashSet<String>();
-                    }
-                    else
-                    {
-                        String[] wordArray = this.inputLine.split(" ");
-                        this.inputLine = null;
-                        return new HashSet<String>(Arrays.asList(wordArray));
-                    }
+                    return this.nextSet();
                 }
                 else
                 {
+                    done = true;
                     throw new NoSuchElementException();
                 }
             }
             else
             {
-                if (this.inputLine.isEmpty())
-                {
-                    this.inputLine = null;
-                    return new HashSet<String>();
-                }
-                else
-                {
-                    String[] wordArray = this.inputLine.split(" ");
-                    this.inputLine = null;
-                    return new HashSet<String>(Arrays.asList(wordArray));
-                }
+                return this.nextSet();
             }
         }
     }
