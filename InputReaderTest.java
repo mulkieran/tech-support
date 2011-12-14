@@ -54,6 +54,18 @@ public class InputReaderTest
         expected.add("slow");
         assertEquals(inp, expected);
     }
+    
+    /**
+     * q1 to q4 to q5 with empty input
+     */
+    @Test
+    public void next_1_4_5_empty()
+    {
+        InputReader inputRea1 = new InputReader(new ByteArrayInputStream(new String("  ").getBytes()));
+        Set<String> inp = inputRea1.next();
+        Set<String> expected = new HashSet<String>();
+        assertEquals(inp, expected);
+    }
 
     /**
      * q0 to q5 in next().
