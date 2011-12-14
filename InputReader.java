@@ -79,7 +79,7 @@ public class InputReader implements Iterator<Set<String>>
         }        
         else
         {
-            if (inputLine==null)
+            if (inputLine == null)
             { 
                 if(hasNext())
                 {
@@ -94,10 +94,16 @@ public class InputReader implements Iterator<Set<String>>
             }
             else
             {
+                if (this.inputLine.isEmpty())
+                {
+                    return new HashSet<String>();
+                }
+                else
+                {
+                    String[] wordArray = this.inputLine.split(" ");
 
-                String[] wordArray = this.inputLine.split(" ");
-
-                return new HashSet<String>(Arrays.asList(wordArray));
+                    return new HashSet<String>(Arrays.asList(wordArray));
+                }
             }
         }
     }
