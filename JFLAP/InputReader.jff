@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!--Created with JFLAP 6.4.--><structure>
+	<type>mealy</type>
+	<automaton>
+		<!--The list of states.-->
+		<state id="0" name="q0">
+			<x>241.0</x>
+			<y>28.0</y>
+		</state>
+		<state id="1" name="q1">
+			<x>107.0</x>
+			<y>111.0</y>
+			<initial/>
+		</state>
+		<state id="2" name="q2">
+			<x>395.0</x>
+			<y>86.0</y>
+		</state>
+		<state id="3" name="q3">
+			<x>246.0</x>
+			<y>181.0</y>
+		</state>
+		<!--The list of transitions.-->
+		<transition>
+			<from>1</from>
+			<to>3</to>
+			<read>h</read>
+			<transout>E</transout>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>0</to>
+			<read>h</read>
+			<transout>N</transout>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>3</to>
+			<read>n</read>
+			<transout>F</transout>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>1</to>
+			<read>n</read>
+			<transout>T</transout>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>1</to>
+			<read>n</read>
+			<transout>T</transout>
+		</transition>
+		<transition>
+			<from>3</from>
+			<to>3</to>
+			<read>n</read>
+			<transout>F</transout>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>0</to>
+			<read>h</read>
+			<transout>N</transout>
+		</transition>
+		<transition>
+			<from>3</from>
+			<to>3</to>
+			<read>h</read>
+			<transout>E</transout>
+		</transition>
+		<note>
+			<text>State numbers represent states of InputrReader.
+0 : done:F, inputLine = null: F
+1:  done:F, inputLine = null:T
+2: done:T, inputLine = null: F
+3 : done:T, inputLine = null:T
+
+Note that state 2 is an unreachable state.
+
+Input symbols are {h, n} for hasNext() and next().
+Output symbols are {T,F} for next() and {N,E} for hasNext().
+N is defined to be a normal termination.
+E is an exceptional termination. </text>
+			<x>319.0</x>
+			<y>213.0</y>
+		</note>
+	</automaton>
+</structure>
