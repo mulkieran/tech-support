@@ -29,17 +29,14 @@ public class SupportSystem
         responder = new Responder(answers);
     }
 
-    /**
-     * Start the technical support system. This will print a welcome message and enter
-     * into a dialog with the user, until the user ends the dialog.
-     */
     public void start()
     {
         printWelcome();
         System.out.println("Please type 'bye' to exit our system.");
         for ( ; this.reader.hasNext(); )
         {
-            System.out.println(this.responder.generateResponse(this.reader.next()));
+            System.out.println(
+                this.responder.generateResponse(this.reader.next()));
         }
         
         printGoodbye();
@@ -50,7 +47,7 @@ public class SupportSystem
      */
     private void printWelcome()
     {
-        for(String line : responder.getWelcome())
+        for (String line : responder.getWelcome())
         {
             System.out.println(line);
         }
@@ -61,7 +58,7 @@ public class SupportSystem
      */
     private void printGoodbye()
     {
-        for(String line : responder.getFarewell())
+        for (String line : responder.getFarewell())
         {
             System.out.println(line);
         }

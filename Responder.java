@@ -65,7 +65,8 @@ public class Responder
             else
             {
                 Object[] l = keys.toArray();
-                return this.responseMap.get(l[randomGenerator.nextInt(l.length)]);
+                return this.responseMap.get(
+                    l[randomGenerator.nextInt(l.length)]);
             }
 
         }

@@ -44,8 +44,10 @@ public class ResponderTest
     @Test
     public void generateResponse4()
     {
-        java.util.HashSet<java.lang.String> possibleValues = new java.util.HashSet<String>();
-        java.util.HashSet<java.lang.String> words = new java.util.HashSet<String>();
+        java.util.HashSet<java.lang.String> possibleValues =
+            new java.util.HashSet<String>();
+        java.util.HashSet<java.lang.String> words =
+            new java.util.HashSet<String>();
         Responder responder = new Responder(new TechSupportAnswers());
         words.add("crash");
         words.add("slow");

@@ -3,8 +3,8 @@ import java.util.Map;
 
 public interface Answers
 {
-  Map<String, String> getAnswers();
-  List<String> getDefaultAnswers();
-  List<String> getWelcome();
-  List<String> getFarewell();
+    Map<String, String> getAnswers();
+    List<String> getDefaultAnswers();
+    List<String> getWelcome();
+    List<String> getFarewell();
 }

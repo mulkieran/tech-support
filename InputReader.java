@@ -99,7 +99,7 @@ public class InputReader implements Iterator<Set<String>>
         {
             if (inputLine == null)
             { 
-                if(this.getInput())
+                if (this.getInput())
                 {
                     return this.nextSet();
                 }

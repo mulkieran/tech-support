@@ -48,7 +48,9 @@ public class InputReaderTest
     @Test
     public void next_1_4_5()
     {
-        InputReader inputRea1 = new InputReader(new ByteArrayInputStream(new String("slow").getBytes()));
+        InputReader inputRea1 =
+            new InputReader(
+                new ByteArrayInputStream(new String("slow").getBytes()));
         Set<String> inp = inputRea1.next();
         Set<String> expected = new HashSet<String>();
         expected.add("slow");
@@ -61,7 +63,9 @@ public class InputReaderTest
     @Test
     public void next_1_4_5_empty()
     {
-        InputReader inputRea1 = new InputReader(new ByteArrayInputStream(new String("  ").getBytes()));
+        InputReader inputRea1 =
+            new InputReader(
+                new ByteArrayInputStream(new String("  ").getBytes()));
         Set<String> inp = inputRea1.next();
         Set<String> expected = new HashSet<String>();
         assertEquals(inp, expected);
@@ -73,7 +77,9 @@ public class InputReaderTest
     @Test
     public void next_0_5()
     {
-        InputReader inputRea1 = new InputReader(new ByteArrayInputStream(new String("slow").getBytes()));
+        InputReader inputRea1 =
+            new InputReader(
+                new ByteArrayInputStream(new String("slow").getBytes()));
         inputRea1.hasNext();        
         Set<String> inp = inputRea1.next();
         Set<String> expected = new HashSet<String>();
@@ -87,7 +93,9 @@ public class InputReaderTest
     @Test
     public void hasNext_1_4_0()
     {
-        InputReader inputRea1 = new InputReader(new ByteArrayInputStream(new String("slow").getBytes()));
+        InputReader inputRea1 =
+            new InputReader(
+                new ByteArrayInputStream(new String("slow").getBytes()));
         assertEquals(true, inputRea1.hasNext());
         assertEquals(true, inputRea1.hasNext());
     }
@@ -99,7 +107,9 @@ public class InputReaderTest
     @Test
     public void hasNext_1_4_3()
     {
-        InputReader inputRea1 = new InputReader(new ByteArrayInputStream(new String("bye").getBytes()));
+        InputReader inputRea1 =
+            new InputReader(
+                new ByteArrayInputStream(new String("bye").getBytes()));
         assertEquals(false, inputRea1.hasNext());
         assertEquals(false, inputRea1.hasNext());
     }
@@ -111,7 +121,9 @@ public class InputReaderTest
     @Test
     public void hasNext_1_3()
     {
-        InputReader inputRea1 = new InputReader(new ByteArrayInputStream(new String("").getBytes()));
+        InputReader inputRea1 =
+            new InputReader(
+                new ByteArrayInputStream(new String("").getBytes()));
         assertEquals(false, inputRea1.hasNext());
     }
 
@@ -122,7 +134,9 @@ public class InputReaderTest
     @Test
     public void hasNext_0_0()
     {
-        InputReader inputRea1 = new InputReader(new ByteArrayInputStream(new String("slow").getBytes()));
+        InputReader inputRea1 =
+            new InputReader(
+                new ByteArrayInputStream(new String("slow").getBytes()));
         inputRea1.hasNext();
         assertEquals(true, inputRea1.hasNext());        
     }
@@ -134,7 +148,9 @@ public class InputReaderTest
     @Test
     public void hasNext_3_3()
     {
-        InputReader inputRea1 = new InputReader(new ByteArrayInputStream(new String("").getBytes()));
+        InputReader inputRea1 =
+            new InputReader(
+                new ByteArrayInputStream(new String("").getBytes()));
         inputRea1.hasNext();
         assertEquals(false, inputRea1.hasNext()); 
     }

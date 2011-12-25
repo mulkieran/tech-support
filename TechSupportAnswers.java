@@ -24,7 +24,7 @@ public class TechSupportAnswers implements Answers
     
     public Map<String, String> getAnswers()
     {
-        HashMap<String,String> map = new HashMap<String, String>();
+        HashMap<String, String> map = new HashMap<String, String>();
         map.put("crash", 
             "Well, it never crashes on our system. It must have something\n" +
             "to do with your system. Tell me more about your configuration.");
