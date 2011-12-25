@@ -31,6 +31,7 @@ public class InputReader implements Iterator<Set<String>>
 
     private boolean getInput()
     {
+        assert(!this.done && this.inputLine == null);
         System.out.print("> ");
 
         if (reader.hasNextLine())
@@ -55,7 +56,7 @@ public class InputReader implements Iterator<Set<String>>
 
     public boolean hasNext()
     {
-        assert (!done || this.inputLine == null);
+        assert (!this.done || this.inputLine == null);
         if (done)
         {
             return false;
@@ -75,6 +76,7 @@ public class InputReader implements Iterator<Set<String>>
 
     private Set<String> nextSet()
     {
+        assert(!this.done && this.inputLine != null);
         if (this.inputLine.isEmpty())
         {
             this.inputLine = null;
@@ -90,7 +92,7 @@ public class InputReader implements Iterator<Set<String>>
 
     public Set<String> next()
     {
-        assert (!done || this.inputLine == null);
+        assert (!this.done || this.inputLine == null);
         if (done)
         { 
             throw new NoSuchElementException();
